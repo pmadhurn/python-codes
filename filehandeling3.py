@@ -306,7 +306,96 @@ def Q21():
 #Q21()
 
 
+#22.Write a program to read entire data from the file"data.txt" and write only those lines to file "dest.txt" which starts from word "The"
 
+
+
+""""
+23.Write a program to read entire data from file"data.txt" using readline() method.
+
+24.Write a program to read the content from file"data.txt" and write to file "dest.txt" after changing the case(convert lower case to upper case and vice-versa)
+
+25. Write a program to create a list of 5 numbers (input from user) and write that list in a file "data.txt".
+
+26.Write a program to create a list of 5 numbers(input from user) and write list in file "data.txt". Now read the numbers from data.txt and write only even numbers to another file "dest.txt". TAG
+
+27.Write a program to read a file "data.txt" and replace word "school" by
+
+27. Write a program to read a file "data.txt" and replace word "school" by "college" and write in "dest.txt"
+
+28. Write a program to replace a word "school" to"college" in the same file("data. txt"). C-1
+
+29. Write a program in python to replace all word "the" by another word "them" in a file "poem txt".
+
+30. Write a program in python to replace a character by another character in a file "story.txt. (Accept both the characters from the user)
+
+31.Write a program in python to replace all the 'a' by '@' in a file "data.txt".
+
+32.Write a program in python to read file "data.txt" and display only those lines whose length is more than 40 characters.
+
+33.Write a program in python to remove all duplicate lines from the file "story.txt".
+
+34.Write a program in python to display only unique words from the file "story.txt".
+
+35.Write a program in python to count the frequency of each vowels in a file "task.txt".
+
+36.Write a program in python to count those words whose length is more than 7 characters in a file "story.txt".
+
+37.Write a program in python to count those lines from the file"div.txt"
+
+38.which are starting from 'T' or 'M'. Write a program in python to count those lines from the file "div.txt" which are not starting from 'M'.
+
+39.Write a program in python to display those words from a file "image. txt" which are ending from alphabet 'm'.
+
+40.Write a program in python to read all lines of file "data.txt" using readline() only.
+
+41.Write a program in Python to copy the entire conten file "data.txt" to "story.txt". AG
+
+42.Write a program in Python to copy the alternate lines from file "data.txt" to "story.txt".
+
+43.Write a program in Python to read the entire content from file "data. txt" and copy the contents to "story.txt" in upper case.
+
+44.Write a program in Python to read the entire content from file "data.txt" and copy only those words to "story.txt" which start from vowels.
+
+45.Write a program in Python write a program in python to read the entire content from file"data.txt" and copy only those words in separate lines to "story.txt" which are starting from lower case alphabets.
+
+46.Write a function disp_mob(model no.) in Python which will display the record of a mobile from "mobile.dat" whose model number (integer type) is passed as an argument. Structure of "mobile.dat" is [Mobile id, Mobile brand, Model No., Price]
+
+47.Write a menu driven program which shows all operations on Binary File
+        
+    1. Add Record
+
+    2. Display All Record
+
+    3. Display Specific Record
+
+    4. Modify Record
+
+    5. Delete Record
+
+    Use "data.dat" file which stores the record of "Hotel" in the for list containing Room_no, Price, Room_type.
+
+48.Write a function disp75() in Python to display only those records of students from file "school.dat" who scored more than 75 percent marks. Structure stored in "school.dat" is in the form list containing information like [rollno, name, class, percentage].
+
+49.Write a program in Python which display the longest line from file "star.txt".
+
+50.Consider a binary file "data.dat" which stores the record of
+
+    "Hotel" in the form of list containing Room_no, Price, Room_type.
+
+    Do the following task in a file
+
+    1. Write a function addrec() to add a record in a file.
+
+    2. Write a function disp() to display all the records from the file.
+
+    3. Write a function specific disp(room no) which takes room number as argument and display its details.
+
+    4. Write a function mod(room no) which takes room number as argument and modify it's details,
+
+    5. Write a function del (room_no) which takes room number as argument and delete it's record from file "data dat".
+
+"""
 
 
 
