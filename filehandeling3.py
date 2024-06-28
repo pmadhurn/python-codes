@@ -308,36 +308,258 @@ def Q21():
 
 #22.Write a program to read entire data from the file"data.txt" and write only those lines to file "dest.txt" which starts from word "The"
 
+def Q22():
+    f=open("data.txt","r")
+    a=f.readlines()
+    f.close()
+    f=open("pest.txt","w")
+    for i in a:
+        if len(i)>3:
+            if i[0]== "t" or "T"  and i[1]=="h" or "H" and i[2]=="e"or "e":
+                f.write(i)
+
+    f.close()
+    f=open("pest.txt","r")
+    
+    print(f.read())
+
+    f.close()
+    
+#Q22()
+
+#23.Write a program to read entire data from file"data.txt" using readline() method.
 
 
-""""
-23.Write a program to read entire data from file"data.txt" using readline() method.
+def Q23():
+    f=open("data.txt","r")
+    print(f.readline())
+    """line = f.readline()
+    while line:
+        print(line.strip())  # strip() removes the trailing newline
+        line = f.readline()
+    """
+    for i in range(39):
+        print(f.readline())
+    f.close()
+#Q23()
 
-24.Write a program to read the content from file"data.txt" and write to file "dest.txt" after changing the case(convert lower case to upper case and vice-versa)
+#24.Write a program to read the content from file "data.txt" and write to file "dest.txt" after changing the case(convert lower case to upper case and vice-versa)
 
-25. Write a program to create a list of 5 numbers (input from user) and write that list in a file "data.txt".
+def Q24():
+    f=open("data.txt","r")
+    a=f.read()
+    #b=f.swapcase()
+    f.close
+    b=a.swapcase()
+    f=open("dest.txt","w")
+    f.write(b)
+    print(b)
+#Q24()
 
-26.Write a program to create a list of 5 numbers(input from user) and write list in file "data.txt". Now read the numbers from data.txt and write only even numbers to another file "dest.txt". TAG
+#25. Write a program to create a list of 5 numbers (input from user) and write that list in a file "data.txt".
 
-27.Write a program to read a file "data.txt" and replace word "school" by
+def Q25():
+    l=[]
+    x=0
+    while x!=5:
+        x+=1
+        y=int(input("Enter a number : "))
+        l.append(y)
+    
+    f=open("data.txt","w")
+    f.writelines(str(l))
+    f.close()
+    f=open("data.txt","r")
+    print(f.read())
+    
 
-27. Write a program to read a file "data.txt" and replace word "school" by "college" and write in "dest.txt"
+#Q25()
 
-28. Write a program to replace a word "school" to"college" in the same file("data. txt"). C-1
+#26.Write a program to create a list of 5 numbers(input from user) and write list in file "data.txt". Now read the numbers from data.txt and write only even numbers to another file "dest.txt". TAG
 
-29. Write a program in python to replace all word "the" by another word "them" in a file "poem txt".
+def Q26():
+    l=[1,2,3,4,5,6,7,8,9]
+    x=5
+    while x!=5:
+        x+=1
+        y=int(input("Enter a number : "))
+        l.append(y)
+    
+    f=open("data.txt","w")
+    f.writelines(str(l))
+    f.close()
+    f=open("data.txt","r")
+    a=f.read()
+    f.close()
+    x=len(a)
+    z=[]
+    for i in range(x):
+        z.append(eval(a[i]))
+    
+    f=open("dest.txt","w")
+    for i in z:
+        
+        if i%2==0:
+            f.write(i)
+    f.close()
+    
+    f=open("dest.txt","r")
+    print(f.read())
 
-30. Write a program in python to replace a character by another character in a file "story.txt. (Accept both the characters from the user)
+#Q26()
 
-31.Write a program in python to replace all the 'a' by '@' in a file "data.txt".
+#27.Write a program to read a file "data.txt" and replace word "school" by collage and write it in dest.txt
 
-32.Write a program in python to read file "data.txt" and display only those lines whose length is more than 40 characters.
+def Q27():
+    f=open("data.txt","r")
+    a=f.read()
+    f.close()
+    a=a.replace("school","collage")
+    f=open("bert.txt","w")
+    f.write(a)
+    f.close()
 
-33.Write a program in python to remove all duplicate lines from the file "story.txt".
 
-34.Write a program in python to display only unique words from the file "story.txt".
 
-35.Write a program in python to count the frequency of each vowels in a file "task.txt".
+#Q27()
+
+#28. Write a program to replace a word "school" to"college" in the same file("data. txt"). C-1
+
+def Q28():
+    f=open("data.txt","r")
+    a=f.read()
+    f.close()
+    a=a.replace("school","collage")
+    f=open("data.txt","w")
+    f.write(a)
+    f.close()
+
+
+#Q28()
+
+#29. Write a program in python to replace all word "the" by another word "them" in a file "poem txt".
+def Q29():
+    f=open("poem.txt")
+    a=f.read()
+    a=a.replace("the","them")
+    f.close()
+    f=open("poem.txt","w")
+    f.write(a)
+
+Q29()
+
+#30. Write a program in python to replace a character by another character in a file "story.txt. (Accept both the characters from the user)
+
+def Q30():
+    x=input("enter the character you want to replace")
+    b=input("enter the character you want to replace it with : ")
+    f=open("poem.txt")
+    a=f.read()
+    a=a.replace(x,b)
+    f.close()
+    f=open("poem.txt","w")
+    f.write(a)
+#Q30()
+
+#31.Write a program in python to replace all the 'a' by '@' in a file "data.txt".
+
+def Q31():
+    
+    f=open("poem.txt")
+    a=f.read()
+    a=a.replace("a","@")
+    f.close()
+    f=open("poem.txt","w")
+    f.write(a)
+    f.close()
+#Q31()
+
+
+
+
+#32.Write a program in python to read file "data.txt" and display only those lines whose length is more than 40 characters.
+def Q32():
+    f=open("data.txt","r")
+    a=f.readlines()
+    for i in a:
+        if len(i)>40:
+            print(i)
+#Q32()
+
+#33.Write a program in python to remove all duplicate lines from the file "story.txt".
+def Q33():
+    f=open("story.txt","r")
+    a=f.readlines()
+    j=[]
+    for i in a:
+        if i not in j:
+            j.append(i)
+    
+    f.close()
+    f=open("story.txt",'w')
+    f.writelines(j)
+
+#Q33()
+        
+#34.Write a program in python to display only unique words from the file "story.txt".
+
+def Q34():
+    
+#35.Write a program in python to count the frequency of each vowels in a file "task.txt".
+
+def Q35():
+    f=open("story.txt","r")
+    j=f.readlines()
+    f.close()
+    a=0
+    e=0
+    i=0
+    o=0
+    u=0
+    l=['e',"e","E","E"]
+    for x in j:
+        y=len(x)
+        l=['a',"a",'A',"A"]
+        for z in range(y):
+            if x[z] in l:
+                
+                a+=1
+        
+        l=['e',"e","E","E"]
+    
+        for z in range(y):
+            if x[z] in l:
+                
+                e+=1
+
+        l=['i',"i",'I',"I"]
+
+        for z in range(y):
+            if x[z] in l:
+                
+                i+=1
+
+        l=['o',"o",'O',"O"]
+        for z in range(y):
+            if x[z] in l:
+                
+                o+=1
+        
+        l=['U',"U",'u',"u"]
+        
+        for z in range(y):
+            if x[z] in l:
+                
+                u+=1
+              
+
+    print("a:",a,"e:",e,"i:","o:",o,"u:",u)
+Q35()
+
+
+"""
+
+
 
 36.Write a program in python to count those words whose length is more than 7 characters in a file "story.txt".
 
