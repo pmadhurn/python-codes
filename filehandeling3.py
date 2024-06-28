@@ -556,34 +556,52 @@ def Q35():
     print("a:",a,"e:",e,"i:","o:",o,"u:",u)
 Q35()
 
+#36.Write a program in python to count those words whose length is more than 7 characters in a file "story.txt".
+def Q36():
+    print("hello")
+#37.Write a program in python to count those lines from the file"div.txt"
 
+def Q37():
+    print("hello")
+
+#38.which are starting from 'T' or 'M'. Write a program in python to count those lines from the file "div.txt" which are not starting from 'M'.
+
+def Q38():
+    print("hello")
+#39.Write a program in python to display those words from a file "image. txt" which are ending from alphabet 'm'.
+
+def Q39():
+    print("hello")
+#40.Write a program in python to read all lines of file "data.txt" using readline() only.
+
+def Q40():
+    print("hello")
+#41.Write a program in Python to copy the entire conten file "data.txt" to "story.txt". AG
+
+def Q41():
+    print("hello")
+#42.Write a program in Python to copy the alternate lines from file "data.txt" to "story.txt".
+
+def Q42():
+    print("hello")
+#43.Write a program in Python to read the entire content from file "data. txt" and copy the contents to "story.txt" in upper case.
+
+def Q43():
+    print("hello")
+#44.Write a program in Python to read the entire content from file "data.txt" and copy only those words to "story.txt" which start from vowels.
+
+def Q44():
+    print("hello")
+#45.Write a program in Python write a program in python to read the entire content from file"data.txt" and copy only those words in separate lines to "story.txt" which are starting from lower case alphabets.
+
+def Q45():
+    print("hello")
+#46.Write a function disp_mob(model no.) in Python which will display the record of a mobile from "mobile.dat" whose model number (integer type) is passed as an argument. Structure of "mobile.dat" is [Mobile id, Mobile brand, Model No., Price]
+
+def Q46():
+    print("hello")
 """
-
-
-
-36.Write a program in python to count those words whose length is more than 7 characters in a file "story.txt".
-
-37.Write a program in python to count those lines from the file"div.txt"
-
-38.which are starting from 'T' or 'M'. Write a program in python to count those lines from the file "div.txt" which are not starting from 'M'.
-
-39.Write a program in python to display those words from a file "image. txt" which are ending from alphabet 'm'.
-
-40.Write a program in python to read all lines of file "data.txt" using readline() only.
-
-41.Write a program in Python to copy the entire conten file "data.txt" to "story.txt". AG
-
-42.Write a program in Python to copy the alternate lines from file "data.txt" to "story.txt".
-
-43.Write a program in Python to read the entire content from file "data. txt" and copy the contents to "story.txt" in upper case.
-
-44.Write a program in Python to read the entire content from file "data.txt" and copy only those words to "story.txt" which start from vowels.
-
-45.Write a program in Python write a program in python to read the entire content from file"data.txt" and copy only those words in separate lines to "story.txt" which are starting from lower case alphabets.
-
-46.Write a function disp_mob(model no.) in Python which will display the record of a mobile from "mobile.dat" whose model number (integer type) is passed as an argument. Structure of "mobile.dat" is [Mobile id, Mobile brand, Model No., Price]
-
-47.Write a menu driven program which shows all operations on Binary File
+#47.Write a menu driven program which shows all operations on Binary File
         
     1. Add Record
 
@@ -596,12 +614,21 @@ Q35()
     5. Delete Record
 
     Use "data.dat" file which stores the record of "Hotel" in the for list containing Room_no, Price, Room_type.
+"""
 
-48.Write a function disp75() in Python to display only those records of students from file "school.dat" who scored more than 75 percent marks. Structure stored in "school.dat" is in the form list containing information like [rollno, name, class, percentage].
 
-49.Write a program in Python which display the longest line from file "star.txt".
+def Q47():
+    print("hello")
+#48.Write a function disp75() in Python to display only those records of students from file "school.dat" who scored more than 75 percent marks. Structure stored in "school.dat" is in the form list containing information like [rollno, name, class, percentage].
 
-50.Consider a binary file "data.dat" which stores the record of
+def Q48():
+    print("hello")
+#49.Write a program in Python which display the longest line from file "star.txt".
+
+def Q49():
+    print("hello")
+"""
+#50.Consider a binary file "data.dat" which stores the record of
 
     "Hotel" in the form of list containing Room_no, Price, Room_type.
 
@@ -621,6 +648,8 @@ Q35()
 
 
 
+def Q50():
+    print("hello")
 
 
 
