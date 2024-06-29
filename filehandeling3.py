@@ -645,7 +645,7 @@ def Q49():
     5. Write a function del (room_no) which takes room number as argument and delete it's record from file "data dat".
 
 """
-
+    
 
 
 def Q50():

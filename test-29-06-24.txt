@@ -1,0 +1,1 @@
+#Write a program in Python to Find all prime numbers in a given list
