@@ -504,6 +504,7 @@ def Q33():
 #34.Write a program in python to display only unique words from the file "story.txt".
 
 def Q34():
+    -
     
 #35.Write a program in python to count the frequency of each vowels in a file "task.txt".
 
@@ -558,6 +559,7 @@ Q35()
 
 #36.Write a program in python to count those words whose length is more than 7 characters in a file "story.txt".
 def Q36():
+    
     print("hello")
 #37.Write a program in python to count those lines from the file"div.txt"
 
