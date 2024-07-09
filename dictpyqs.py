@@ -175,6 +175,7 @@ accept keys from user and update its values .
 """
 
 def Q12():
+
     x={1:"Aman",2:"Suman",3:"Aman",4:[1,2,3,4,5,6]}
-    print(z)
+    print(x)
     y=int(input("ENTER A VALUE FOR "))

@@ -328,13 +328,12 @@ def Q23():
     f=open("data.txt","r")
     a=f.readlines()
     x=len(a)
-    x=x
     f.close()
     f=open("data.txt","r")
-    for i in range(37):
+    for i in range(x):
         print(f.readline())
     f.close()
-Q23()
+#Q23()
 
 #24.Write a program to read the content from file "data.txt" and write to file "dest.txt" after changing the case(convert lower case to upper case and vice-versa)
 
@@ -446,7 +445,7 @@ def Q29():
 #30. Write a program in python to replace a character by another character in a file "story.txt. (Accept both the characters from the user)
 
 def Q30():
-    x=input("enter the character you want to replace")
+    x=input("enter the character you want to replace : ")
     b=input("enter the character you want to replace it with : ")
     f=open("poem.txt")
     a=f.read()
@@ -454,7 +453,11 @@ def Q30():
     f.close()
     f=open("poem.txt","w")
     f.write(a)
-#Q30()
+    f.close()
+    f=open("poem.txt","r")
+    print(f.read())
+    
+Q30()
 
 #31.Write a program in python to replace all the 'a' by '@' in a file "data.txt".
 
@@ -495,12 +498,7 @@ def Q33():
     f.writelines(j)
 
 #Q33()
-        
-#34.Write a program in python to display only unique words from the file "story.txt".
-
-def Q34():
-    print("enter")
-    
+            
 #35.Write a program in python to count the frequency of each vowels in a file "task.txt".
 
 def Q35():

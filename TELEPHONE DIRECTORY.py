@@ -3,7 +3,8 @@ C-TAG
 
 Project-Based Program Task: Telephone Directory Management System
 Objective:
-Design and implement a Telephone Directory Management System that allows users to manage contacts efficiently. The system should support functionalities such as adding new contacts, updating existing contacts, deleting contacts, searching for contacts, and displaying all contacts.
+Design and implement a Telephone Directory Management System that allows users to manage contacts efficiently. The system should support functionalities such as 
+adding new contacts, updating existing contacts, deleting contacts, searching for contacts, and displaying all contacts.
 Requirements:
 1.	Contact Information:
 o	Each contact should have the following details:
@@ -25,133 +26,129 @@ o	Design a simple text-based user interface (console application) that provides 
 o	Ensure the interface is user-friendly and handles invalid inputs gracefully.
 	
 """
-import os
+contactlist={'Name':["Madhur","Anjali"],"Phone Number":[9016273812,8200265763],"Email Address":["pmadhurn@gmail.com","Madhur121patel.gmail.com"],"Address":["dadhavav 383462","Dantod,383642"]}
+def ADDNEW():
+    print("\nYOU HAVE CHOOSE ADDING NEW CONTACE SELECTION.\n")
+    name=input("ENTER THE NAME OF THE CONTACT YOU WANT TO ADD : ")
+    phone=input(f"ENTER THE PHONE NUMBER FOR {name} : ")    
+    email=input(f"ENTER THE EMAIL ADDRESS OF FOR  {name} : ")
+    address=input(f"ENTER THE ADDRESS FOR {name} IN THE FORMAT Street, City, State, Zip Code : ")
+    contactlist["Name"].append(name)
+    contactlist["Phone Number"].append(phone)
+    contactlist["Email Address"].append(email)
+    contactlist["Address"].append(address)
 
-class Contact:
-    def __init__(self, first_name, last_name, phone_number, email, street, city, state, zip_code):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.phone_number = phone_number
-        self.email = email
-        self.street = street
-        self.city = city
-        self.state = state
-        self.zip_code = zip_code
+    
+def UPDATE():
+    x=input("Enter the name of the person whom you want to update : ")
+    z=len(contactlist["Name"])
+    x=True
+    for i in range(0,z):  
+            if contactlist["Name"][i]==x:
+                print("found that contact\n ENTER EDITED CONTENT FOR THAT CONTACT : ")
+            
+                name=input(f"ENTER THE NEW NAME FOR {contactlist["Name"][i]==x}")   
+                phone=input(f"ENTER THE PHONE NUMBER FOR {contactlist["Name"][i]==x} : ")    
+                email=input(f"ENTER THE EMAIL ADDRESS OF FOR  {contactlist["Name"][i]==x} : ")
+                address=input(f"ENTER THE ADDRESS FOR {contactlist["Name"][i]==x} IN THE FORMAT Street, City, State, Zip Code : ")
+                
+                contactlist["Name"][i]=name
+                contactlist["Phone Number"][i]=phone
+                contactlist["Email Address"][i]=email
+                contactlist["Address"][i]=address
+                x=False
+                break
+    if x:
+        print("Soryy contact not found")
 
-    def to_dict(self):
-        return self.__dict__
+def DELETE():
+        x=input("Enter the name of the person whom you want to Delete : ")
+        z=len(contactlist["Name"])
+        x=True
+        for i in range(0,z):  
+            if contactlist["Name"][i]==x:
+                del contactlist["Name"][i]
+                del contactlist["Phone Number"][i]
+                del contactlist["Email Address"][i]
+                del contactlist["Address"][i]
+                x=False
+                break    
+        if x:
+            print("Soryy contact not found")
 
-    @classmethod
-    def from_dict(cls, data):
-        return cls(**data)
+def SEARCH():
+    X=True
+    op=int(input("Choose any one from following:\n1)\tSearch by Name.\n2)\tSearch by Phone number.\n"))
+    if op==1:
+            x=input("Enter the name of the person whom you want to Search : ")
+            z=len(contactlist["Name"])
+            for i in range(0,z):  
+                if contactlist["Name"][i]==x:
+                    print("Found that contact\n")
+                    print("Name : ",contactlist["Name"][i])
+                    print("Phone Number : ",contactlist["Phone Number"][i])
+                    print("Email Address : ",contactlist["Email Address"][i])
+                    print("Resedential Address",contactlist["Address"][i])
+                    x=False            
+                    break
 
-class TelephoneDirectory:
-    def __init__(self):
-        self.contacts = []
-        self.filename = "contacts.txt"
-        self.load_contacts()
+            if x:
+                print("Soryy contact not found")
 
-    def add_contact(self, contact):
-        self.contacts.append(contact)
-        self.save_contacts()
+    elif op==2:
+        x=int(input("Enter the Phone number of the person whom you want to Search : "))
+        z=len(contactlist["Name"])
+        for i in range(0,z):
+                if contactlist["Phone Number"][i]==x:
+                    print("Found that contact\n")
+                    print("Name : ",contactlist["Name"][i])
+                    print("Phone Number : ",contactlist["Phone Number"][i])
+                    print("Email Address : ",contactlist["Email Address"][i])
+                    print("Resedential Address",contactlist["Address"][i])
+                    x=False
+                    break
+        if x:
+            print("Soryy contact not found")
 
-    def update_contact(self, index, contact):
-        self.contacts[index] = contact
-        self.save_contacts()
+    else:
+         print("Sorry You Choose the option outside the range")
+         
 
-    def delete_contact(self, index):
-        del self.contacts[index]
-        self.save_contacts()
+def DISPLAY():
+    
+    for i in contactlist:
+        print(i," :")
+        x=len(contactlist[i])
+        for j in range(0,x):
+            print(contactlist[i][j])
+        print("\n\n",)
+                        
 
-    def search_contact(self, query):
-        return [contact for contact in self.contacts 
-                if query.lower() in contact.first_name.lower() 
-                or query.lower() in contact.last_name.lower() 
-                or query in contact.phone_number]
-
-    def display_contacts(self):
-        for i, contact in enumerate(self.contacts):
-            print(f"{i+1}. {contact.first_name} {contact.last_name} - {contact.phone_number}")
-
-    def save_contacts(self):
-        with open(self.filename, 'w') as f:
-            for contact in self.contacts:
-                f.write(str(contact.to_dict()) + '\n')
-
-    def load_contacts(self):
-        if os.path.exists(self.filename):
-            with open(self.filename, 'r') as f:
-                for line in f:
-                    contact_dict = eval(line.strip())
-                    self.contacts.append(Contact.from_dict(contact_dict))
-
-def get_contact_details():
-    first_name = input("Enter first name: ")
-    last_name = input("Enter last name: ")
-    phone_number = input("Enter phone number: ")
-    email = input("Enter email address: ")
-    street = input("Enter street address: ")
-    city = input("Enter city: ")
-    state = input("Enter state: ")
-    zip_code = input("Enter zip code: ")
-    return Contact(first_name, last_name, phone_number, email, street, city, state, zip_code)
-
-def main():
-    directory = TelephoneDirectory()
-
+def Main():
     while True:
-        print("\nTelephone Directory Management System")
-        print("1. Add New Contact")
-        print("2. Update Contact")
-        print("3. Delete Contact")
-        print("4. Search Contact")
-        print("5. Display All Contacts")
-        print("6. Exit")
-
-        choice = input("Enter your choice (1-6): ")
-
-        if choice == '1':
-            contact = get_contact_details()
-            directory.add_contact(contact)
-            print("Contact added successfully!")
-
-        elif choice == '2':
-            directory.display_contacts()
-            index = int(input("Enter the number of the contact to update: ")) - 1
-            if 0 <= index < len(directory.contacts):
-                contact = get_contact_details()
-                directory.update_contact(index, contact)
-                print("Contact updated successfully!")
-            else:
-                print("Invalid contact number!")
-
-        elif choice == '3':
-            directory.display_contacts()
-            index = int(input("Enter the number of the contact to delete: ")) - 1
-            if 0 <= index < len(directory.contacts):
-                directory.delete_contact(index)
-                print("Contact deleted successfully!")
-            else:
-                print("Invalid contact number!")
-
-        elif choice == '4':
-            query = input("Enter name or phone number to search: ")
-            results = directory.search_contact(query)
-            if results:
-                print("Search results:")
-                for contact in results:
-                    print(f"{contact.first_name} {contact.last_name} - {contact.phone_number}")
-            else:
-                print("No contacts found!")
-
-        elif choice == '5':
-            directory.display_contacts()
-
-        elif choice == '6':
-            print("Thank you for using the Telephone Directory Management System!")
+        print("WELCOME TO TELEPHONE DIRECTORY MANAGEMENT SYSTEM.")
+        print("\nPLEASE CHOOSE A OPETION FROM BELOW : ")
+        print("\n\n\n")
+        print("1. ADD NEW CONTACT.")
+        print("\n2. UPDATE EXISTING CONTACT.")
+        print("\n3. DELETE CONTACT.")
+        print("\n4. SEARCH FOR CONTACT.")
+        print("\n5. DISPLAY ALL CONTACTS.")
+        print("\n6. EXIT\n\n")
+        x=int(input("ENTER YOUR CHOICE : "))
+        if x==1:
+            ADDNEW()
+        elif x==2:
+            UPDATE()
+        elif x==3:
+            DELETE()
+        elif x==4:
+   
+            SEARCH()
+        elif x==5:
+            DISPLAY()
+        elif x==6:
             break
-
-        else:
-            print("Invalid choice. Please try again.")
-
-main()
+        elif x<1 and x>6:
+            print("Sorry Invalid Input")
+Main()

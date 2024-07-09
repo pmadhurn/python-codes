@@ -69,9 +69,11 @@ def Q4():
 
 #Write a Python program to find string palindrome in a list and then print all string palindrome in ascending order.
 def Q5():
-    x=input("Enter a string which needs to be checked if its palindrome or not : ")
-    if x[::1]==x[::-1]:
-        print(f"String {x} is Palindrome")
-    else:
-        print(f"String {x} is not Palindrome")   
+    
+        
+        x=input("Enter a string which needs to be checked if its palindrome or not : ")
+        if x[::1]==x[::-1]:
+            print(f"String {x} is Palindrome")
+        else:
+            print(f"String {x} is not Palindrome")   
 #Q5()
